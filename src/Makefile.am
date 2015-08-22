@@ -1,2 +1,2 @@
 bin_PROGRAMS = mplace
-mplace_SOURCES = main.cxx
+mplace_SOURCES = main.cpp

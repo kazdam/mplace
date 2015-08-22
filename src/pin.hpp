@@ -1,8 +1,8 @@
-#ifndef PIN_HXX
-#define PIN_HXX
+#ifndef PIN_HPP
+#define PIN_HPP
 
 #include <vector>
-#include "object.hxx"
+#include "object.hpp"
 
 using std::vector;
 
@@ -14,4 +14,4 @@ namespace model {
   };
 }
 
-#endif /* PIN_HXX */
+#endif /* PIN_HPP */

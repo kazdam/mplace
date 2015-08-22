@@ -1,5 +1,5 @@
-#ifndef OBJECT_HXX
-#define OBJECT_HXX
+#ifndef OBJECT_HPP
+#define OBJECT_HPP
 
 #include <string>
 
@@ -23,4 +23,4 @@ namespace model {
   };
 }
 
-#endif /* BOX_HXX */
+#endif /* BOX_HPP */

@@ -1,9 +1,9 @@
-#ifndef BOX_HXX
-#define BOX_HXX
+#ifndef BOX_HPP
+#define BOX_HPP
 
 #include <vector>
-#include "object.hxx"
-#include "pin.hxx"
+#include "object.hpp"
+#include "pin.hpp"
 
 using std::vector;
 
@@ -16,4 +16,4 @@ namespace model {
   };
 }
 
-#endif /* BOX_HXX */
+#endif /* BOX_HPP */

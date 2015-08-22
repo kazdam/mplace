@@ -1,5 +1,5 @@
 #include <iostream>
-#include "box.hxx"
+#include "box.hpp"
 
 using std::cout;
 using std::endl;
