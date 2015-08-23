@@ -7,20 +7,23 @@ using std::string;
 
 namespace model {
   class object {
+  protected:
     string name;
   public:
     object(const char* _name) : 
       name(_name) {}
-    object(string& _name) :
+    object(const string& _name) :
       name(_name) {}
-
-    const char* get_name() {
+    const string& get_name() const {
+      return name;
+    }
+    const char* get_cname() const {
       return name.data();
     }
-    void set_name(string& _name) {
+    void set_name(const string& _name) {
       name = _name;
     }
   };
 }
 
-#endif /* BOX_HPP */
+#endif /* OBJECT_HPP */

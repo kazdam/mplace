@@ -1,16 +1,18 @@
 #ifndef PIN_HPP
 #define PIN_HPP
 
-#include <vector>
 #include "object.hpp"
 
-using std::vector;
-
 namespace model {
+  class net;
+
   class pin : public object {
-    
+    net* _net;
   public:
-    pin( string& _name ) : object( _name ) {}
+    pin (const string &_name ) : object(_name) {}
+    pin (const pin &pin) : object(name) {
+      _net = pin._net;
+    }
   };
 }
 
