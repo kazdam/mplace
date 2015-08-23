@@ -95,6 +95,9 @@ void model::print () {
   for (auto &p : boxes) {
     std::cout << "BOX " << p.first << std::endl;
   }
+  for (auto &p : pins) {
+    std::cout << "PIN " << p.first << std::endl;
+  }
   for (auto &p : nets) {
     std::cout << "NET " << p.first << std::endl;
   }
