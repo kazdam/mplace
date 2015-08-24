@@ -1,0 +1,51 @@
+# Emacs backup files
+*~
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+mplace
+*.exe
+*.out
+*.app
+
+# Makefiles, automake, autoconf
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache
+compile
+config.h
+config.h.in
+config.log
+configure
+config.status
+depcomp
+install-sh
+missing
+install-sh
+.deps
+stamp-h1
+

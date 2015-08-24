@@ -60,10 +60,12 @@ namespace model {
     void remove_pin (const string& name) {
       pins.erase(name);
     }
+
+    // ostream& print_on(ostream& os) const;
+    // ostream& operator<<(ostream& os) const;
   };
+  ostream& operator<<(ostream& os, const box& obj);
 }
 
-using model::box;
-ostream& operator<<(ostream& os, const box& obj);
 
 #endif /* BOX_HPP */

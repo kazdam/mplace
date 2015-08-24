@@ -93,7 +93,7 @@ void model::build (const string& file_name)
 
 void model::print () {
   for (auto &p : boxes) {
-    std::cout << "BOX " << p.first << std::endl;
+    std::cout << *(p.second) << std::endl;
   }
   for (auto &p : pins) {
     std::cout << "PIN " << p.first << std::endl;
