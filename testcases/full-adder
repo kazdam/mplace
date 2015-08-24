@@ -1,0 +1,13 @@
+# Netlist for the full-adder carry circuit
+(A, AND[1].IN1)
+(B, AND[1].IN2)
+(C, AND[2].IN1)
+(B, AND[2].IN2)
+(A, AND[3].IN1)
+(C, AND[3].IN1)
+(AND[1].OUT, OR3[1].IN1)
+(AND[2].OUT, OR3[1].IN2)
+(AND[3].OUT, OR3[1].IN3)
+(OR3[1].OUT, Z)
+(AND[1].Vdd, AND[2].Vdd, AND[3].Vdd, OR3[1].Vdd)
+(AND[1].GND, AND[2].GND, AND[3].GND, OR3[1].GND)
