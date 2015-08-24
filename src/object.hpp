@@ -8,20 +8,25 @@ using std::string;
 namespace model {
   class object {
   protected:
-    string name;
+    string _name;
   public:
-    object(const char* _name) : 
-      name(_name) {}
-    object(const string& _name) :
-      name(_name) {}
-    const string& get_name() const {
-      return name;
+    object(const char* name) : 
+      _name(name) {}
+    object(const string& name) :
+      _name(name) {}
+    object (const object &p) {
+      _name = p._name;
     }
-    const char* get_cname() const {
-      return name.data();
+
+
+    const string& name() const {
+      return _name;
     }
-    void set_name(const string& _name) {
-      name = _name;
+    const char* cname() const {
+      return _name.data();
+    }
+    const string& set_name(const string& name) {
+      return _name = name;
     }
   };
 }

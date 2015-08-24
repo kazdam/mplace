@@ -9,10 +9,8 @@ namespace model {
   class pin : public object {
     net* _net;
   public:
-    pin (const string &_name ) : object(_name) {}
-    pin (const pin &pin) : object(name) {
-      _net = pin._net;
-    }
+    pin (const string &name ) : object(name) {}
+    pin (const pin &pin) : _net(pin._net), object(pin) {}
   };
 }
 

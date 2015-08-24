@@ -14,13 +14,14 @@ namespace model {
   class net : public object {
     unordered_map<string, pin*> pins;
   public:
-    net(const char* _name ) : object(_name) {}
-    net(const string& _name) : object(_name) {}
+    net (const char* name ) : object(name) {}
+    net (const string& name) : object(name) {}
+    net (const net& rhs) : pins(rhs.pins), object(rhs) {}
 
-    void connect(pin* _pin) {
-      const string& name = _pin->get_name();
+    void connect (pin* p) {
+      const string& name = p->name();
       if (pins.find(name) == pins.end())
-	pins.insert(make_pair(name, _pin));
+	pins.insert(make_pair(name, p));
     }
   };
 }
