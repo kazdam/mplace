@@ -3,7 +3,11 @@
 
 namespace model {
 
-  enum class box_type : char { NOT, AND, OR, NAND, NOR, XOR, XNOR, AOI, OAI };
+  enum class def_type : char { UNDEF, NOT, AND, OR, NAND, NOR, XOR, XNOR, AOI, OAI };
+
+  enum class pin_direction : char { UNDEF, INPUT, OUTPUT, BIDI };
+
+  enum class pin_type : char { CLOCK, DATA, SCAN, POWER };
 
 }
 

@@ -1,5 +1,5 @@
-#ifndef BOX_HPP
-#define BOX_HPP
+#ifndef DEF_HPP
+#define DEF_HPP
 
 #include <ostream>
 #include <utility>
@@ -15,30 +15,22 @@ using std::ostream;
 using std::endl;
 
 namespace model {
-  class def;
-  class box : public object {
-    def* _parent;
+  class def : public object {
     int _x;
     int _y;
     int _width;
     int _height;
+    enum def_type _type;
     unordered_map<string, pin*> pins;
   public:
-    box (const string &name) : object(name), _parent(nullptr),
-			       _x(-1), _y(-1), _width(0), _height(0)
-			       {}
-    box (const box& rhs) : _parent(rhs._parent),
-			   _width(rhs._width),
+    def (const string &name) : object(name), 
+			       _x(-1), _y(-1), _width(0), _height(0),
+			       _type(def_type::UNDEF) {}
+    def (const def& rhs) : _width(rhs._width),
 			   _height(rhs._height),
+			   _type(rhs._type),
 			   pins(rhs.pins),
 			   object(rhs) {}
-    
-    def* set_parent (def* parent) {
-      return _parent = parent;
-    }
-    def* parent() const {
-      return _parent;
-    }
     
     int set_x ( int x ) {
       return _x = x;
@@ -64,19 +56,9 @@ namespace model {
     int width () const {
       return _width;
     }
-    
-    void add_pin (pin *p) {
-      const string &name = p->name();
-      auto it = pins.find(name);
-      if (it == pins.end())
-	pins.insert(make_pair(name, p));
-    }
-    void remove_pin (const string& name) {
-      pins.erase(name);
-    }
   };
-  ostream& operator<<(ostream& os, const box& obj);
+  ostream& operator<<(ostream& os, const def& obj);
 }
 
 
-#endif /* BOX_HPP */
+#endif /* DEF_HPP */

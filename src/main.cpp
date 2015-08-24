@@ -3,6 +3,7 @@
 
 using std::cout;
 using std::endl;
+using model::proto;
 
 int main (int argc, char **argv)
 {
@@ -10,8 +11,9 @@ int main (int argc, char **argv)
   //cout << "Box is " << foo.get_name() << endl;
   
   for (int i = 1; i < argc; ++i) {
-    model::build(string(argv[i]));
+    proto* p = new proto();
+    p->read(string(argv[i]));
+    p->print();
   }
-
-  model::print();
 }
+
