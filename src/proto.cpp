@@ -1,4 +1,5 @@
 #include <vector>
+#include <iostream>
 #include <fstream>
 #include <boost/tokenizer.hpp>
 #include "model.hpp"

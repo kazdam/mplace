@@ -1,3 +1,17 @@
 bin_PROGRAMS = mplace
 mplace_SOURCES = main.cpp box.cpp pin.cpp proto.cpp
 AM_CXXFLAGS = -std=c++11
+AM_CPPFLAGS = $(BOOST_CPPFLAGS)
+
+# LIBS += $(LIBS_BOOST)
+
+# ACLOCAL_AMFLAGS = -I  m4
+
+# LDFLAGS_BOOST = \
+#     $(BOOST_SYSTEM_LDFLAGS) \
+#     $(BOOST_PROGRAM_OPTIONS_LDFLAGS)
+
+# LIBS_BOOST = \
+#     $(BOOST_SYSTEM_LIBS) \
+#     $(BOOST_PROGRAM_OPTIONS_LIBS) \
+#     $(BOOST_FILESYSTEM_LIBS)

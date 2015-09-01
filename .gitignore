@@ -49,3 +49,10 @@ install-sh
 .deps
 stamp-h1
 
+config.guess
+config.sub
+libtool
+ltmain.sh
+
+# autoconf macros
+*.m4
