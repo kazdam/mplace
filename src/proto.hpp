@@ -4,11 +4,14 @@
 #include <ostream>
 #include <utility>
 #include <unordered_map>
+#include <vector>
 #include "object.hpp"
 #include "enums.hpp"
 #include "pin.hpp"
+#include "cktrow.hpp"
 
 using std::string;
+using std::vector;
 using std::unordered_map;
 using std::make_pair;
 using std::ostream;
@@ -23,6 +26,7 @@ namespace model {
     unordered_map<string, pin*> pins;
     unordered_map<string, net*> nets;
     unordered_map<string, box*> boxes;
+    vector<cktrow*> cktrows;
   public:
     proto () : object("TOP"),
 	       _x(-1), _y(-1), _width(0), _height(0) {}
@@ -96,6 +100,17 @@ namespace model {
       } else {
 	return nullptr;
       }
+    }
+
+    void add_cktrow (cktrow *c) {
+      cktrows.push_back(c);
+    }
+    cktrow *locate_cktrow (const string &name) {
+      for( auto &cktrow : cktrows ) {
+	if ( cktrow->name() == name )
+	  return cktrow;
+      }
+      return nullptr;
     }
 
     void add_net (net *b) {
