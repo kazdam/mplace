@@ -25,6 +25,7 @@ static void gen_net_name (string& name)
   name = "NET" + to_string(net_count++);
 }
 
+// read a proto box in from on disk
 void proto::read (const string& file_name)
 {
   cout << "file: " << file_name << endl;
@@ -85,6 +86,7 @@ void proto::read (const string& file_name)
   }
 }
 
+// Loop over the objects and print them out. good debug dump
 void proto::print () const {
   for (auto &p : boxes) {
     std::cout << *(p.second) << std::endl;
